@@ -23,10 +23,11 @@ class Scripture
   {
     Console.WriteLine($"{_reference} {_singleVerse}");
   }
-  static void Main(string[] args)
+  static void Main1(string[] args)
   {
     Scripture myObj = new Scripture();
-    Console.WriteLine();
+    Console.WriteLine($"{myObj}");
   }
 }
+
 
