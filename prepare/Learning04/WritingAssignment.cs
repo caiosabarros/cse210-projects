@@ -9,7 +9,7 @@ class WritingAssignment:Assignment
     //The writing assignment should have a constructor that requires a value for each of the items that it stores.
     //
     //The writing assignment needs to provide a method to return a summary of the assignment that contains the student's name and the topic, and it also needs to provide a method to get the writing information which consists of the title and the student's name (for example, "The Causes of World War II by Mary Waters").
-   public WritingAssignment(string title): base(studentName, topic)
+   public WritingAssignment(string studentName, string topic, string title): base(studentName, topic)
    {
     _title = title;
    }
