@@ -1,0 +1,21 @@
+Class Menu
+behavior: display menu
+behavior: display common starting message
+behavior: display common ending message
+
+Class Paused:Menu
+behavior: display animation/countdown
+
+Class Breathing: Pause
+behavior: display "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."
+behavior: display Breathe in..." 
+behavior: display "Breathe out..."
+Class Reflecting: Paused
+behavior: display ""This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
+behavior: select a random prompt to show the user
+behavior: ask the to reflect on questions that relate to this experience.
+Class Listing : Paused
+behavior: display "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area."
+behavior: select a random prompt to show the user
+behavior: The user lists as many items as they can until they they reach the duration specified by the user at the beginning.
+behavior: activity them displays back the number of items that were entered.
