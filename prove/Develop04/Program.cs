@@ -1,18 +1,18 @@
 using System;
 
-class Program
+class Program 
 {
     static void Main(string[] args)
     {
         Menu menu = new Menu();
         int selected = menu.DisplayMenu();
         menu.DisplayStartingMessage(selected);
-
-        Console.Write("+");
-
-        System.Threading.Thread.Sleep(500);
-
-        Console.Write("\b \b"); // Erase the + character
-        Console.Write("-"); // Replace it with the - character
+        string seconds = Console.ReadLine();
+        int intSeconds = Convert.ToInt32(seconds);
+        menu.setSeconds(intSeconds);
+        Console.Clear();
+        menu.DisplayAnimation();
+        menu.DisplayEntrance();
+        System.Threading.Thread.Sleep(1000);
     }
 }
