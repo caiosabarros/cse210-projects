@@ -31,4 +31,9 @@ class Activity
         }
   }
 
+  public void DisplayEndingMessage(int duration, string activityName){
+    Console.WriteLine("");
+    Console.WriteLine($"Well Done! You have completed another {duration} seconds of the {activityName} activity.");
+  }
+
 }
