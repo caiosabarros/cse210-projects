@@ -5,6 +5,7 @@ class Program : Menu
     static void Main(string[] args)
     {
         Program program = new Program();
+        while(true){
         int selected = program.DisplayMenu();
         if(selected == 1){
           //Breathing
@@ -18,26 +19,21 @@ class Program : Menu
           Reflecting reflect = new Reflecting();
           reflect.DisplayReflectingInitialMessage();
           int length = reflect.AskForTime();
-          //reflect.DisplayEntrance();
+          reflect.DisplayInitialRandomPrompt();
+          reflect.DisplayQuestionsToReflect();
+          reflect.DisplayEndingMessage(length, "Reflecting");
         } else if(selected == 3){
           //Listing
           Listing list = new Listing();
           list.DisplayListingInitialMessage();
           int period = list.AskForTime();
+          list.DisplayListingInitialQuestion();
+          list.GetInputsFromUser(period);
           //list.DisplayEntrance();
         } else {
           System.Environment.Exit(0);
         }
-      
-        // menu.DisplayStartingMessage(selected);
-        // string seconds = Console.ReadLine();
-        // int intSeconds = Convert.ToInt32(seconds);
-        // menu.setSeconds(intSeconds);
-        // Console.Clear();
-        // menu.DisplayAnimation();
-        // menu.DisplayEntrance();
-        // Animation anime = new Animation();
-        
-        System.Threading.Thread.Sleep(1000);
+        System.Threading.Thread.Sleep(2000);
+        }        
     }
 }
