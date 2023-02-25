@@ -12,23 +12,31 @@ class Program : Menu
           Breathing breath = new Breathing();
           breath.DisplayBreathingInitialMessage();
           int duration = breath.AskForTime();
+          breath.DisplayAnimation(true);
           breath.InAndOut(duration);
+          breath.DisplayAnimation(false);
           breath.DisplayEndingMessage(duration, "Breathing");
+          breath.DisplayAnimation(false);
         } else if(selected == 2){
           //Reflecting
           Reflecting reflect = new Reflecting();
           reflect.DisplayReflectingInitialMessage();
           int length = reflect.AskForTime();
+          reflect.DisplayAnimation(true);
           reflect.DisplayInitialRandomPrompt();
           reflect.DisplayQuestionsToReflect();
+          reflect.DisplayAnimation(false);
           reflect.DisplayEndingMessage(length, "Reflecting");
-        } else if(selected == 3){
+          reflect.DisplayAnimation(false);
+          } else if(selected == 3){
           //Listing
           Listing list = new Listing();
           list.DisplayListingInitialMessage();
           int period = list.AskForTime();
+          list.DisplayAnimation(true);
           list.DisplayListingInitialQuestion();
           list.GetInputsFromUser(period);
+          list.DisplayAnimation(false);
           //list.DisplayEntrance();
         } else {
           System.Environment.Exit(0);

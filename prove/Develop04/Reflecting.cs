@@ -61,6 +61,8 @@ class Reflecting : Activity
         int index = rand.Next(questions.Count);
         string randomQuestion = questions[index];
         Console.WriteLine($"{randomQuestion}");
+        Reflecting reflect = new Reflecting();
+        reflect.DisplayAnimation(false);
         System.Threading.Thread.Sleep(3000);
         Console.WriteLine("");
       }

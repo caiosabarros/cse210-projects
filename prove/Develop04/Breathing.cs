@@ -12,7 +12,6 @@ class Breathing : Activity
   public void InAndOut(int length)
   {
     for (int i=length; i>= 1; i=i-20){
-      Console.WriteLine("Get ready...");
       Console.WriteLine("");
       Console.Write("Breath in...");
       for (int x=5; x>=1; x--)

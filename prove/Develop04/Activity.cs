@@ -17,10 +17,12 @@ class Activity
     _seconds = seconds;
   }
     
-  public void DisplayAnimation()
+  public void DisplayAnimation(bool getReady)
   {
+    if(getReady){
         Console.WriteLine("Get ready...");
         Console.WriteLine("");
+    }
         var spinner = new[] { '|', '/', '-', '\\' };
         var index = 0;
         var count = 30;
