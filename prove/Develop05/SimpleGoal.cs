@@ -1,6 +1,12 @@
 using System;
 
-class Simple
+class Simple: Goal
 {
-    
+    public override void CreateGoal(){
+      
+    }
+
+    public override void RecordEvent(){
+      
+    }
 }

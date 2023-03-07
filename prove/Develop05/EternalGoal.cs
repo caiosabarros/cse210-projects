@@ -1,6 +1,14 @@
 using System;
 
-class Eternal
+class Eternal: Goal
 {
+    public override void CreateGoal(){
+      
+    }
+
+    public override void RecordEvent(){
+      
+    }
+
     
 }
