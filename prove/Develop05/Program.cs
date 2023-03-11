@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO; 
 
 class Program
 {
@@ -64,10 +65,7 @@ class Program
             int bonnus = Convert.ToInt32(Console.ReadLine()); 
             int bonus = pontos.SetBonusRelatedToGoal(bonnus);
             int completed = check.GetCompleted();
-            goals.Add($"[ ] {name}({description}) -- Currently completed {completed/times}");
-            
-            
-            
+            goals.Add($"[ ] {name}({description}) -- Currently completed {completed}/{times}"); 
           }
         }
         else if (selected == 2) {
@@ -80,11 +78,28 @@ class Program
           }
           Console.WriteLine("");
         } else if (selected == 3) {
-          Console.WriteLine("3");
+          Console.WriteLine("What is the filename for the goal file?");
+          string filename = Console.ReadLine();
+using(StreamWriter outputFile = new StreamWriter(filename))
+{
+  foreach(var str in goals)
+    {
+    outputFile.WriteLine($"{str}");            
+    }
+}
+  goals.Clear();
         } else if (selected == 4) {
-          Console.WriteLine("4");
+          Console.WriteLine("What is the filename for the goal file?");
+          string filename = Console.ReadLine();
+          string[] lines = System.IO.File.ReadAllLines(filename);
+  foreach(string line in lines)
+    {
+    goals.Add($"{line}");
+    }
         } else if (selected == 5) {
-          Console.WriteLine("5");
+          Console.WriteLine("Which goal did you accomplish?");
+          int accomplished = Convert.ToInt32(Console.ReadLine());
+          if() {}
         } else if (selected == 6) {
           System.Environment.Exit(0);
         } 
