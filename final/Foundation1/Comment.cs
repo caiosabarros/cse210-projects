@@ -13,6 +13,5 @@ public class Comment
     {
         Console.WriteLine($"Name: {_name}");
         Console.WriteLine($"Comment: {_comment} comment(s)");
-        // }
     }
 }
