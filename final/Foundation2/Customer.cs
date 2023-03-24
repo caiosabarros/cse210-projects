@@ -5,11 +5,28 @@ using System;
 
 class Customer
 {
+
+
     private string _name = "";
-    private Address _address = "";
+    private Address _address = new Address("Brazil");
+    
+    public Customer(string name){
+        //set name
+        _name = name;
+        //default address
+        _address = new Address();
+    }
     public bool DoesCustomerLiveInTheUS()
     {
         Address address = new Address();
         return address.IsAddressInTheUS();
+    }
+
+    public string GetCustomerName(){
+        return _name;
+    }
+
+    public string GetCustomerAddress(){
+        return _address.DisplayAddress();
     }
 }

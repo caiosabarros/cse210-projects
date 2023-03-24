@@ -7,23 +7,52 @@ using System.Collections.Generic;
 // Contains a list of products and a customer. 
 class Order
 {
-    List<Product> products = new List<Product>();
-    Customer customer = new Customer();
+    private List<Product> products = new List<Product>();
+    private Customer customer = new Customer("Caio");
+
+    public Order(){
+        customer = new Customer("Caio");
+        string customerName = customer.GetCustomerName();
+    }
+
     public int TotalOrderCost()
     {
+    int totalPrice = 0;
 // The total price is calculated as the sum of the prices of each product plus a one-time shipping cost.
-        
+    foreach(Product product in products){
+        totalPrice += product.GetTotalPrice();
+    }
+    if( customer.DoesCustomerLiveInTheUS() ) {
+        totalPrice = totalPrice + 5;
+    } else {
+        totalPrice = totalPrice + 35;
+    }
+      return totalPrice;
     }
 
-    public string PackingLabel(){
+    public void AddProduct(string name, int price, int id, int amount){
+        products.Add(new Product(name, price, id, amount));
+    }
+
+    public void GetProductsFromOrder(){ 
+        foreach(Product product in products){
+            Console.WriteLine($"Name: {product.GetProductName()}");
+            Console.WriteLine($"ID: {product.GetProductID()}");
+            Console.WriteLine($"Quantity: {product.GetQuantity()}");
+            Console.WriteLine($"Price: {product.GetProductPrice()}");
+            Console.WriteLine($"Total Price: {product.GetTotalPrice()}");
+        }
+    }
+
+    public void PackingLabel(){
 // A packing label should list the name and product id of each product in the order.
     foreach(Product product in products) {
-        Console.WriteLine($"Product Name:{product.name} Product Id:{product.id}")
+        Console.WriteLine($"Product Name:{product.GetProductName()}--Product Id:{product.GetProductID()}");
     }
     }
 
-    public string ShippingLabel(){
+    public void ShippingLabel(){
 // A shipping label should list the name and address of the customer
-        Console.WriteLine($"Customer Name:{customer._name} {customer._address.DisplayAddress()}")
+        Console.WriteLine($"Customer Name:{customer.GetCustomerName()}--Address:{customer.GetCustomerAddress()}");
     }
 }
