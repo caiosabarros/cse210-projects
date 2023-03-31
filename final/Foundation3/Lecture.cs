@@ -1,7 +1,7 @@
 using System;
 
 // For lectures, this includes the speaker name and capacity.
-class Lecture: Event {
+class Lecture: EventInfo {
   private string _speakerName = "";
   private int _capacity = 0;
 
@@ -28,8 +28,13 @@ class Lecture: Event {
     return $"{_eventType} {GetLectureTitle()} {GetLectureDate()}";
   }
 
-    public string GetLectureTitle() {
+  public string GetLectureTitle() {
     return $"{_title}";
+  }
+
+  public string SetLectureTitle(string title) {
+    _title = title;
+    return $"{title}";
   }
 
   public string GetLectureDescription() {
