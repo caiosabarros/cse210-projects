@@ -3,35 +3,26 @@ using System;
 class Outdoor: EventInfo {
   // For outdoor gatherings, this includes a statement of the weather.
   private string _weatherStatement = "";
-  public static void Main (string[] args) {
-    Console.WriteLine ("Hello World");
+
+  public Outdoor(string weatherStatement):base("ETHDenver","Event For Ethereum lovers","03/20/2023","10am-5pm", new Address()) 
+  {
+    _weatherStatement = weatherStatement;
   }
 
   public string LectureFullDetails() {
     // type of event
-    string _eventType = GetEventType(1);
-    string fullfromBase = FullDetails();
+    string _eventType = GetEventType(2);
+    string fullfromBase = FullDetails(2);
     return $"{fullfromBase} {_weatherStatement}";
   }
 
   
-  public string GetOutdoorTitle() {
-    return $"{_title}";
+  public string SetWeatherStatement(string weatherStatement ) {
+    return $"{_weatherStatement}";
   }
 
-  public string GetOutdoorDescription() {
-    return $"{_description}";
+  public string GetWeatherStatement() {
+    return $"{_weatherStatement}";
   }
 
-  public string GetOutdoorDate() {
-    return $"{_date}";
-  }
-
-  public string GetOutdoorTime() {
-    return $"{_time}";
-  }
-
-  public string GetOutdoorAddress() {
-    return $"{_address}";
-  }
 }

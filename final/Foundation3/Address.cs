@@ -25,7 +25,7 @@ class Address
 
 // The address should have a method to return a string all of its fields together in one string (with newline characters where appropriate)
     public string DisplayAddress() {
-        return $"Street:{_street} City:{_city} State:{_state} Country:{_country}";
+        return $"\r\n Street:{_street} \r\n City:{_city} \r\n State:{_state} \r\n Country:{_country}";
     }
 
     
