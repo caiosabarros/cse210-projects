@@ -23,22 +23,27 @@ public abstract class Activity
         return length;
     }
 
-    public abstract string GetSummary(string activity, string date, int length, int distance, int speed, int pace) {
+    public string GetSummary() {
         // Form: Date activityType (length): Distance (distance),
 // Speed: (kph), Pace: length per km
-        string activityType = "";
-        if (activity == "1"){ activityType = "Running"}
-        else if (activity == "2"){ activityType = "Cycling"} 
-        else if (activity == "3") {activityType = "Swimming"}
-        return $"{date} {activityType} ({length}) min: Distance ({distance}), Speed: {speed} (kph), Pace: ({pace}) {length} per km";
+        // string activityType = "";
+        //make many if elses and instantiate each class and make the return inside each class.
+        // Then each class defines its own GetSummary calling
+        // the other methods within the class itself
+        // A base class that only contains these abstract methods and nothing else has a special name, it is called an Interface
+        // Use abstract classes bc interface only has abstract methods.
+        // Override the method in each class.
+        //call the methods using the keyword this.
+
+        return $"{_date} {this} ({_length}) min: Distance ({this.GetDistance(_distance)}), Speed: {this.GetSpeed(_distance, _length)} (kph), Pace: ({this.GetPace(_distance, _length)}) {_length} per km";
     }
 
   // In addition, the base class should contain virtual methods for getting the distance, speed, pace. These methods should be overridden in the derived classes.
-    public abstract int GetDistance();
+    public abstract float GetDistance(int distance);
 
-    public abstract int GetSpeed();
+    public abstract float GetSpeed(int distance, int length);
 
-    public abstract int GetPace();
+    public abstract float GetPace(int distance, int length);
 
     
 
