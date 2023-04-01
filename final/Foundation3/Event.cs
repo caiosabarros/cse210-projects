@@ -1,6 +1,8 @@
 using System;
 
 // Regardless of the type, all events need to have an Event Title, Description, Date, Time, and Address.
+
+//changed the name from Event to EventInfo because I was getting errors related to event being a keyword in C# :/
 class EventInfo {
   protected string _title="";
   protected string _description="";
@@ -53,7 +55,17 @@ class EventInfo {
     return $"{_description}";
   }
 
+  public string SetDescription(string description) {
+    _description = description;
+    return $"{_description}";
+  }
+
   public string GetDate() {
+    return $"{_date}";
+  }
+
+  public string SetDate(string date) {
+    _date = date;
     return $"{_date}";
   }
 
@@ -61,8 +73,18 @@ class EventInfo {
     return $"{_time}";
   }
 
+  public string SetTime(string time) {
+    _time = time;
+    return $"{_time}";
+  }
+
   public string GetAddress() {
-    return $"{_address}";
+    return $"{_address.DisplayAddress()}";
+  }
+
+  public string SetAddress(string country) {
+    Address _address = new Address(country);
+    return _address.DisplayAddress();
   }
 
   //this function will be inherited and given the eventType corresponding to the event. For example: For Lecture, it'll be as follows:
