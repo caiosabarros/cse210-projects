@@ -2,11 +2,7 @@ using System;
 
 class Cycling:Activity
 {
-    // int length, string date, int distance=0, int laps=0
-    public Cycling(int length, string date, int distance): base(length, date, distance)
-    {
-        // string summary = GetSummary(date,length);
-    }
+    public Cycling(int length, string date, int distance): base(length, date, distance){}
 
     public override float GetDistance(int distance){
         return distance;
