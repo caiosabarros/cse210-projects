@@ -3,10 +3,10 @@ using System;
 public abstract class Activity
 {
     private string _date = "";
-    private int _distance = 0;
-    private int _laps = 0;
+    private int _distance;
+    private int _laps;
     private int _length = 0; // minutes
-    public Activity(int length, string date, int distance=0)
+    public Activity(int length, string date, int distance)
     {
         _length = length;
         _date = date;
@@ -35,7 +35,7 @@ public abstract class Activity
         // Override the method in each class.
         //call the methods using the keyword this.
 
-        return $"{_date} {this} ({_length}) min: Distance ({this.GetDistance(_distance)}), Speed: {this.GetSpeed(_distance, _length)} (kph), Pace: ({this.GetPace(_distance, _length)}) {_length} per km";
+        return $"{_date} {this} ({this.GetLength()}) min: Distance ({this.GetDistance(_distance)}), Speed: {this.GetSpeed(_distance, _length)} (kph), Pace: ({this.GetPace(_distance, _length)}) {_length} per km";
     }
 
   // In addition, the base class should contain virtual methods for getting the distance, speed, pace. These methods should be overridden in the derived classes.

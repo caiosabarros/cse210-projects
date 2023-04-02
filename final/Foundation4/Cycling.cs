@@ -13,11 +13,11 @@ class Cycling:Activity
     }
 
     public override float GetSpeed(int distance, int length){
-        return ( distance / length ) * 60 ;
+        return ( this.GetDistance(distance) / length ) * 60 ;
     }
 
     public override float GetPace(int length, int distance){
-        return ( length / distance);
+        return ( length / this.GetDistance(distance));
     }
 
     // public override string GetSummary(string date, int length) {
